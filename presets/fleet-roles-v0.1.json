@@ -1,0 +1,178 @@
+{
+  "format_version": 1,
+  "id": "fleet-roles-v0.1",
+  "status": "experimental-unplaytested",
+  "description": "An initial fleet-role and upkeep experiment; binary validation does not establish gameplay balance.",
+  "tables": {
+    "CAPSHPSD.DAT": {
+      "sha256": "36fdaaeef4057d70e10a1593950cee5b197ce38d7d1b6a06201a74c93bf44515",
+      "changes": [
+        {
+          "id": 64,
+          "name": "Mon Calamari Cruiser",
+          "field": "ShieldStrength",
+          "before": 300,
+          "after": 400,
+          "reason": "Strengthen its shield-focused role."
+        },
+        {
+          "id": 64,
+          "name": "Mon Calamari Cruiser",
+          "field": "MaintenanceCost",
+          "before": 70,
+          "after": 74,
+          "reason": "Pay additional upkeep for stronger shields."
+        },
+        {
+          "id": 65,
+          "name": "Bulk Cruiser",
+          "field": "MaintenanceCost",
+          "before": 30,
+          "after": 24,
+          "reason": "Offer a cheaper early line ship to sustain."
+        },
+        {
+          "id": 66,
+          "name": "Assault Frigate",
+          "field": "MaintenanceCost",
+          "before": 60,
+          "after": 50,
+          "reason": "Make an escort without fighter capacity less costly to sustain."
+        },
+        {
+          "id": 67,
+          "name": "Nebulon-B Frigate",
+          "field": "Hull",
+          "before": 600,
+          "after": 700,
+          "reason": "Give a vulnerable carrier escort modest extra durability."
+        },
+        {
+          "id": 67,
+          "name": "Nebulon-B Frigate",
+          "field": "MaintenanceCost",
+          "before": 35,
+          "after": 32,
+          "reason": "Encourage small mixed Rebel fleets."
+        },
+        {
+          "id": 68,
+          "name": "Alliance Escort Carrier",
+          "field": "MaintenanceCost",
+          "before": 29,
+          "after": 25,
+          "reason": "Reduce the cost of sustaining a fighter-centered fleet."
+        },
+        {
+          "id": 69,
+          "name": "Corellian Corvette",
+          "field": "MaintenanceCost",
+          "before": 23,
+          "after": 18,
+          "reason": "Make small escorts economical to retain."
+        },
+        {
+          "id": 72,
+          "name": "Corellian Gunship",
+          "field": "MaintenanceCost",
+          "before": 23,
+          "after": 18,
+          "reason": "Make dedicated escorts economical to retain."
+        },
+        {
+          "id": 129,
+          "name": "Lancer Frigate",
+          "field": "MaintenanceCost",
+          "before": 30,
+          "after": 24,
+          "reason": "Make fighter-screening escorts easier to include."
+        },
+        {
+          "id": 133,
+          "name": "Imperial Star Destroyer",
+          "field": "Hull",
+          "before": 2750,
+          "after": 3100,
+          "reason": "Increase staying power for the Imperial line ship."
+        },
+        {
+          "id": 133,
+          "name": "Imperial Star Destroyer",
+          "field": "MaintenanceCost",
+          "before": 71,
+          "after": 80,
+          "reason": "Charge additional upkeep for stronger hulls."
+        },
+        {
+          "id": 139,
+          "name": "Imperial II Star Destroyer",
+          "field": "Hull",
+          "before": 3000,
+          "after": 3400,
+          "reason": "Continue the durable Imperial line-ship identity."
+        },
+        {
+          "id": 139,
+          "name": "Imperial II Star Destroyer",
+          "field": "MaintenanceCost",
+          "before": 99,
+          "after": 110,
+          "reason": "Keep durability tied to a meaningful upkeep cost."
+        },
+        {
+          "id": 134,
+          "name": "Super Star Destroyer",
+          "field": "Hull",
+          "before": 5000,
+          "after": 5500,
+          "reason": "Give the flagship greater endurance."
+        },
+        {
+          "id": 134,
+          "name": "Super Star Destroyer",
+          "field": "MaintenanceCost",
+          "before": 170,
+          "after": 190,
+          "reason": "Keep flagship deployment economically consequential."
+        },
+        {
+          "id": 141,
+          "name": "Imperial Escort Carrier",
+          "field": "MaintenanceCost",
+          "before": 30,
+          "after": 26,
+          "reason": "Support carrier-based alternatives to destroyer-only fleets."
+        }
+      ]
+    },
+    "FIGHTSD.DAT": {
+      "sha256": "b62598d9a35fa3fe9fb65622f2720d10e6fabba055ccba41b87bdf07895268a5",
+      "changes": [
+        {
+          "id": 2,
+          "name": "B-wing",
+          "field": "MaintenanceCost",
+          "before": 8,
+          "after": 6,
+          "reason": "Reduce the upkeep penalty on a specialist bomber."
+        },
+        {
+          "id": 5,
+          "name": "TIE Fighter",
+          "field": "MaintenanceCost",
+          "before": 3,
+          "after": 2,
+          "reason": "Support the Empire's expendable fighter-screen role."
+        },
+        {
+          "id": 8,
+          "name": "TIE Defender",
+          "field": "RefinedMaterialCost",
+          "before": 5,
+          "after": 6,
+          "reason": "Give the advanced multirole fighter a greater production premium."
+        }
+      ]
+    }
+  }
+}

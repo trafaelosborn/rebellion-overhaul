@@ -1,0 +1,1138 @@
+{
+  "source": "https://github.com/MetasharpNet/StarWarsRebellionEditor.NET",
+  "commit": "0ecdef839ecae4f9f114229d3017f077cd8aa8e3",
+  "tables": {
+    "CAPSHPSD": {
+      "header_size": 16,
+      "record_size": 200,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "uint",
+          "offset": 0
+        },
+        {
+          "name": "Field2_1",
+          "type": "uint",
+          "offset": 4
+        },
+        {
+          "name": "ProductionFamily",
+          "type": "uint",
+          "offset": 8
+        },
+        {
+          "name": "NextProductionFamily",
+          "type": "uint",
+          "offset": 12
+        },
+        {
+          "name": "FamilyId",
+          "type": "uint",
+          "offset": 16
+        },
+        {
+          "name": "TextStraDllId",
+          "type": "ushort",
+          "offset": 20
+        },
+        {
+          "name": "Field7_2",
+          "type": "ushort",
+          "offset": 22
+        },
+        {
+          "name": "IsAlliance",
+          "type": "uint",
+          "offset": 24
+        },
+        {
+          "name": "IsEmpire",
+          "type": "uint",
+          "offset": 28
+        },
+        {
+          "name": "RefinedMaterialCost",
+          "type": "uint",
+          "offset": 32
+        },
+        {
+          "name": "MaintenanceCost",
+          "type": "uint",
+          "offset": 36
+        },
+        {
+          "name": "ResearchOrder",
+          "type": "uint",
+          "offset": 40
+        },
+        {
+          "name": "ResearchDifficulty",
+          "type": "uint",
+          "offset": 44
+        },
+        {
+          "name": "UprisingDefense",
+          "type": "uint",
+          "offset": 48
+        },
+        {
+          "name": "Detection",
+          "type": "uint",
+          "offset": 52
+        },
+        {
+          "name": "ShieldStrength",
+          "type": "uint",
+          "offset": 56
+        },
+        {
+          "name": "SubLightEngine",
+          "type": "uint",
+          "offset": 60
+        },
+        {
+          "name": "Maneuverability",
+          "type": "uint",
+          "offset": 64
+        },
+        {
+          "name": "Hyperdrive",
+          "type": "uint",
+          "offset": 68
+        },
+        {
+          "name": "HyperdriveIfDamaged",
+          "type": "uint",
+          "offset": 72
+        },
+        {
+          "name": "TurbolaserFore",
+          "type": "uint",
+          "offset": 76
+        },
+        {
+          "name": "IonCannonFore",
+          "type": "uint",
+          "offset": 80
+        },
+        {
+          "name": "LaserCannonFore",
+          "type": "uint",
+          "offset": 84
+        },
+        {
+          "name": "TurbolaserAft",
+          "type": "uint",
+          "offset": 88
+        },
+        {
+          "name": "IonCannonAft",
+          "type": "uint",
+          "offset": 92
+        },
+        {
+          "name": "LaserCannonAft",
+          "type": "uint",
+          "offset": 96
+        },
+        {
+          "name": "TurbolaserPort",
+          "type": "uint",
+          "offset": 100
+        },
+        {
+          "name": "IonCannonPort",
+          "type": "uint",
+          "offset": 104
+        },
+        {
+          "name": "LaserCannonPort",
+          "type": "uint",
+          "offset": 108
+        },
+        {
+          "name": "TurbolaserStarboard",
+          "type": "uint",
+          "offset": 112
+        },
+        {
+          "name": "IonCannonStarboard",
+          "type": "uint",
+          "offset": 116
+        },
+        {
+          "name": "LaserCannonStarboard",
+          "type": "uint",
+          "offset": 120
+        },
+        {
+          "name": "TurbolaserRange",
+          "type": "uint",
+          "offset": 124
+        },
+        {
+          "name": "IonCannonRange",
+          "type": "uint",
+          "offset": 128
+        },
+        {
+          "name": "LaserCannonRange",
+          "type": "uint",
+          "offset": 132
+        },
+        {
+          "name": "TurbolaserAttackStrength",
+          "type": "uint",
+          "offset": 136
+        },
+        {
+          "name": "IonCannonAttackStrength",
+          "type": "uint",
+          "offset": 140
+        },
+        {
+          "name": "LaserCannonAttackStrength",
+          "type": "uint",
+          "offset": 144
+        },
+        {
+          "name": "OverallAttackStrength",
+          "type": "uint",
+          "offset": 148
+        },
+        {
+          "name": "Hull",
+          "type": "uint",
+          "offset": 152
+        },
+        {
+          "name": "TractorBeamPower",
+          "type": "uint",
+          "offset": 156
+        },
+        {
+          "name": "TractorBeamRange",
+          "type": "uint",
+          "offset": 160
+        },
+        {
+          "name": "GravityWellProjector",
+          "type": "uint",
+          "offset": 164
+        },
+        {
+          "name": "InterdictionStrength",
+          "type": "uint",
+          "offset": 168
+        },
+        {
+          "name": "BombardmentModifier",
+          "type": "uint",
+          "offset": 172
+        },
+        {
+          "name": "DamageControl",
+          "type": "uint",
+          "offset": 176
+        },
+        {
+          "name": "WeaponRechargeRate",
+          "type": "uint",
+          "offset": 180
+        },
+        {
+          "name": "ShieldRechargeRate",
+          "type": "uint",
+          "offset": 184
+        },
+        {
+          "name": "FighterCapacity",
+          "type": "uint",
+          "offset": 188
+        },
+        {
+          "name": "TroopCapacity",
+          "type": "uint",
+          "offset": 192
+        },
+        {
+          "name": "Field51_0",
+          "type": "uint",
+          "offset": 196
+        }
+      ]
+    },
+    "FIGHTSD": {
+      "header_size": 16,
+      "record_size": 168,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "uint",
+          "offset": 0
+        },
+        {
+          "name": "Field2_1",
+          "type": "uint",
+          "offset": 4
+        },
+        {
+          "name": "ProductionFamily",
+          "type": "uint",
+          "offset": 8
+        },
+        {
+          "name": "NextProductionFamily",
+          "type": "uint",
+          "offset": 12
+        },
+        {
+          "name": "FamilyId",
+          "type": "uint",
+          "offset": 16
+        },
+        {
+          "name": "TextStraDllId",
+          "type": "ushort",
+          "offset": 20
+        },
+        {
+          "name": "Field7_2",
+          "type": "ushort",
+          "offset": 22
+        },
+        {
+          "name": "IsAlliance",
+          "type": "uint",
+          "offset": 24
+        },
+        {
+          "name": "IsEmpire",
+          "type": "uint",
+          "offset": 28
+        },
+        {
+          "name": "RefinedMaterialCost",
+          "type": "uint",
+          "offset": 32
+        },
+        {
+          "name": "MaintenanceCost",
+          "type": "uint",
+          "offset": 36
+        },
+        {
+          "name": "ResearchOrder",
+          "type": "uint",
+          "offset": 40
+        },
+        {
+          "name": "ResearchDifficulty",
+          "type": "uint",
+          "offset": 44
+        },
+        {
+          "name": "UprisingDefense",
+          "type": "uint",
+          "offset": 48
+        },
+        {
+          "name": "Detection",
+          "type": "uint",
+          "offset": 52
+        },
+        {
+          "name": "ShieldStrength",
+          "type": "uint",
+          "offset": 56
+        },
+        {
+          "name": "SubLightEngine",
+          "type": "uint",
+          "offset": 60
+        },
+        {
+          "name": "Maneuverability",
+          "type": "uint",
+          "offset": 64
+        },
+        {
+          "name": "Hyperdrive",
+          "type": "uint",
+          "offset": 68
+        },
+        {
+          "name": "HyperdriveIfDamaged",
+          "type": "uint",
+          "offset": 72
+        },
+        {
+          "name": "TurbolaserFore",
+          "type": "uint",
+          "offset": 76
+        },
+        {
+          "name": "IonCannonFore",
+          "type": "uint",
+          "offset": 80
+        },
+        {
+          "name": "LaserCannonFore",
+          "type": "uint",
+          "offset": 84
+        },
+        {
+          "name": "TurbolaserAft",
+          "type": "uint",
+          "offset": 88
+        },
+        {
+          "name": "IonCannonAft",
+          "type": "uint",
+          "offset": 92
+        },
+        {
+          "name": "LaserCannonAft",
+          "type": "uint",
+          "offset": 96
+        },
+        {
+          "name": "TurbolaserPort",
+          "type": "uint",
+          "offset": 100
+        },
+        {
+          "name": "IonCannonPort",
+          "type": "uint",
+          "offset": 104
+        },
+        {
+          "name": "LaserCannonPort",
+          "type": "uint",
+          "offset": 108
+        },
+        {
+          "name": "TurbolaserStarboard",
+          "type": "uint",
+          "offset": 112
+        },
+        {
+          "name": "IonCannonStarboard",
+          "type": "uint",
+          "offset": 116
+        },
+        {
+          "name": "LaserCannonStarboard",
+          "type": "uint",
+          "offset": 120
+        },
+        {
+          "name": "TurbolaserRange",
+          "type": "uint",
+          "offset": 124
+        },
+        {
+          "name": "IonCannonRange",
+          "type": "uint",
+          "offset": 128
+        },
+        {
+          "name": "LaserCannonRange",
+          "type": "uint",
+          "offset": 132
+        },
+        {
+          "name": "TurbolaserAttackStrength",
+          "type": "uint",
+          "offset": 136
+        },
+        {
+          "name": "IonCannonAttackStrength",
+          "type": "uint",
+          "offset": 140
+        },
+        {
+          "name": "LaserCannonAttackStrength",
+          "type": "uint",
+          "offset": 144
+        },
+        {
+          "name": "OverallAttackStrength",
+          "type": "uint",
+          "offset": 148
+        },
+        {
+          "name": "Torpedoes",
+          "type": "uint",
+          "offset": 152
+        },
+        {
+          "name": "TorpedoesRange",
+          "type": "uint",
+          "offset": 156
+        },
+        {
+          "name": "SquadronSize",
+          "type": "uint",
+          "offset": 160
+        },
+        {
+          "name": "BombardmentDefense",
+          "type": "uint",
+          "offset": 164
+        }
+      ]
+    },
+    "MJCHARSD": {
+      "header_size": 16,
+      "record_size": 148,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "uint",
+          "offset": 0
+        },
+        {
+          "name": "Field2_1",
+          "type": "uint",
+          "offset": 4
+        },
+        {
+          "name": "ProductionFamily_0",
+          "type": "uint",
+          "offset": 8
+        },
+        {
+          "name": "NextProductionFamily_0",
+          "type": "uint",
+          "offset": 12
+        },
+        {
+          "name": "FamilyId",
+          "type": "uint",
+          "offset": 16
+        },
+        {
+          "name": "TextStraDllId",
+          "type": "ushort",
+          "offset": 20
+        },
+        {
+          "name": "Field7_2",
+          "type": "ushort",
+          "offset": 22
+        },
+        {
+          "name": "IsAlliance",
+          "type": "uint",
+          "offset": 24
+        },
+        {
+          "name": "IsEmpire",
+          "type": "uint",
+          "offset": 28
+        },
+        {
+          "name": "RefinedMaterialCost_0",
+          "type": "uint",
+          "offset": 32
+        },
+        {
+          "name": "MaintenanceCost",
+          "type": "uint",
+          "offset": 36
+        },
+        {
+          "name": "ResearchOrder_0",
+          "type": "uint",
+          "offset": 40
+        },
+        {
+          "name": "ResearchDifficulty_0",
+          "type": "uint",
+          "offset": 44
+        },
+        {
+          "name": "DiplomacyBase",
+          "type": "uint",
+          "offset": 48
+        },
+        {
+          "name": "DiplomacyVariance",
+          "type": "uint",
+          "offset": 52
+        },
+        {
+          "name": "EspionageBase",
+          "type": "uint",
+          "offset": 56
+        },
+        {
+          "name": "EspionageVariance",
+          "type": "uint",
+          "offset": 60
+        },
+        {
+          "name": "ShipDesignBase",
+          "type": "uint",
+          "offset": 64
+        },
+        {
+          "name": "ShipDesignVariance",
+          "type": "uint",
+          "offset": 68
+        },
+        {
+          "name": "TroopTrainingBase",
+          "type": "uint",
+          "offset": 72
+        },
+        {
+          "name": "TroopTrainingVariance",
+          "type": "uint",
+          "offset": 76
+        },
+        {
+          "name": "FacilityDesignBase",
+          "type": "uint",
+          "offset": 80
+        },
+        {
+          "name": "FacilityDesignVariance",
+          "type": "uint",
+          "offset": 84
+        },
+        {
+          "name": "CombatBase",
+          "type": "uint",
+          "offset": 88
+        },
+        {
+          "name": "CombatVariance",
+          "type": "uint",
+          "offset": 92
+        },
+        {
+          "name": "LeadershipBase",
+          "type": "uint",
+          "offset": 96
+        },
+        {
+          "name": "LeadershipVariance",
+          "type": "uint",
+          "offset": 100
+        },
+        {
+          "name": "LoyaltyBase",
+          "type": "uint",
+          "offset": 104
+        },
+        {
+          "name": "LoyaltyVariance",
+          "type": "uint",
+          "offset": 108
+        },
+        {
+          "name": "JediProbability",
+          "type": "uint",
+          "offset": 112
+        },
+        {
+          "name": "IsKnownJedi",
+          "type": "uint",
+          "offset": 116
+        },
+        {
+          "name": "JediLevelBase",
+          "type": "uint",
+          "offset": 120
+        },
+        {
+          "name": "JediLevelVariance",
+          "type": "uint",
+          "offset": 124
+        },
+        {
+          "name": "CanBeAdmiral",
+          "type": "uint",
+          "offset": 128
+        },
+        {
+          "name": "CanBeCommander",
+          "type": "uint",
+          "offset": 132
+        },
+        {
+          "name": "CanBeGeneral",
+          "type": "uint",
+          "offset": 136
+        },
+        {
+          "name": "IsUnableToBetray",
+          "type": "uint",
+          "offset": 140
+        },
+        {
+          "name": "IsJediTrainer",
+          "type": "uint",
+          "offset": 144
+        }
+      ]
+    },
+    "MNCHARSD": {
+      "header_size": 16,
+      "record_size": 148,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "uint",
+          "offset": 0
+        },
+        {
+          "name": "Field2_1",
+          "type": "uint",
+          "offset": 4
+        },
+        {
+          "name": "ProductionFamily_0",
+          "type": "uint",
+          "offset": 8
+        },
+        {
+          "name": "NextProductionFamily_0",
+          "type": "uint",
+          "offset": 12
+        },
+        {
+          "name": "FamilyId",
+          "type": "uint",
+          "offset": 16
+        },
+        {
+          "name": "TextStraDllId",
+          "type": "ushort",
+          "offset": 20
+        },
+        {
+          "name": "Field7_2",
+          "type": "ushort",
+          "offset": 22
+        },
+        {
+          "name": "IsAlliance",
+          "type": "uint",
+          "offset": 24
+        },
+        {
+          "name": "IsEmpire",
+          "type": "uint",
+          "offset": 28
+        },
+        {
+          "name": "RefinedMaterialCost_0",
+          "type": "uint",
+          "offset": 32
+        },
+        {
+          "name": "MaintenanceCost",
+          "type": "uint",
+          "offset": 36
+        },
+        {
+          "name": "ResearchOrder_0",
+          "type": "uint",
+          "offset": 40
+        },
+        {
+          "name": "ResearchDifficulty_0",
+          "type": "uint",
+          "offset": 44
+        },
+        {
+          "name": "DiplomacyBase",
+          "type": "uint",
+          "offset": 48
+        },
+        {
+          "name": "DiplomacyVariance",
+          "type": "uint",
+          "offset": 52
+        },
+        {
+          "name": "EspionageBase",
+          "type": "uint",
+          "offset": 56
+        },
+        {
+          "name": "EspionageVariance",
+          "type": "uint",
+          "offset": 60
+        },
+        {
+          "name": "ShipDesignBase",
+          "type": "uint",
+          "offset": 64
+        },
+        {
+          "name": "ShipDesignVariance",
+          "type": "uint",
+          "offset": 68
+        },
+        {
+          "name": "TroopTrainingBase",
+          "type": "uint",
+          "offset": 72
+        },
+        {
+          "name": "TroopTrainingVariance",
+          "type": "uint",
+          "offset": 76
+        },
+        {
+          "name": "FacilityDesignBase",
+          "type": "uint",
+          "offset": 80
+        },
+        {
+          "name": "FacilityDesignVariance",
+          "type": "uint",
+          "offset": 84
+        },
+        {
+          "name": "CombatBase",
+          "type": "uint",
+          "offset": 88
+        },
+        {
+          "name": "CombatVariance",
+          "type": "uint",
+          "offset": 92
+        },
+        {
+          "name": "LeadershipBase",
+          "type": "uint",
+          "offset": 96
+        },
+        {
+          "name": "LeadershipVariance",
+          "type": "uint",
+          "offset": 100
+        },
+        {
+          "name": "LoyaltyBase",
+          "type": "uint",
+          "offset": 104
+        },
+        {
+          "name": "LoyaltyVariance",
+          "type": "uint",
+          "offset": 108
+        },
+        {
+          "name": "JediProbability",
+          "type": "uint",
+          "offset": 112
+        },
+        {
+          "name": "IsKnownJedi",
+          "type": "uint",
+          "offset": 116
+        },
+        {
+          "name": "JediLevelBase",
+          "type": "uint",
+          "offset": 120
+        },
+        {
+          "name": "JediLevelVariance",
+          "type": "uint",
+          "offset": 124
+        },
+        {
+          "name": "CanBeAdmiral",
+          "type": "uint",
+          "offset": 128
+        },
+        {
+          "name": "CanBeCommander",
+          "type": "uint",
+          "offset": 132
+        },
+        {
+          "name": "CanBeGeneral",
+          "type": "uint",
+          "offset": 136
+        },
+        {
+          "name": "IsUnableToBetray",
+          "type": "uint",
+          "offset": 140
+        },
+        {
+          "name": "IsJediTrainer",
+          "type": "uint",
+          "offset": 144
+        }
+      ]
+    },
+    "MANFACSD": {
+      "header_size": 16,
+      "record_size": 56,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "uint",
+          "offset": 0
+        },
+        {
+          "name": "Field2_1",
+          "type": "uint",
+          "offset": 4
+        },
+        {
+          "name": "ProductionFamily",
+          "type": "uint",
+          "offset": 8
+        },
+        {
+          "name": "NextProductionFamily",
+          "type": "uint",
+          "offset": 12
+        },
+        {
+          "name": "FamilyId",
+          "type": "uint",
+          "offset": 16
+        },
+        {
+          "name": "TextStraDllId",
+          "type": "ushort",
+          "offset": 20
+        },
+        {
+          "name": "Field7_2",
+          "type": "ushort",
+          "offset": 22
+        },
+        {
+          "name": "IsAlliance",
+          "type": "uint",
+          "offset": 24
+        },
+        {
+          "name": "IsEmpire",
+          "type": "uint",
+          "offset": 28
+        },
+        {
+          "name": "RefinedMaterialCost",
+          "type": "uint",
+          "offset": 32
+        },
+        {
+          "name": "MaintenanceCost",
+          "type": "uint",
+          "offset": 36
+        },
+        {
+          "name": "ResearchOrder",
+          "type": "uint",
+          "offset": 40
+        },
+        {
+          "name": "ResearchDifficulty",
+          "type": "uint",
+          "offset": 44
+        },
+        {
+          "name": "BombardmentDefense",
+          "type": "uint",
+          "offset": 48
+        },
+        {
+          "name": "ProcessingRate",
+          "type": "uint",
+          "offset": 52
+        }
+      ]
+    },
+    "PROFACSD": {
+      "header_size": 16,
+      "record_size": 56,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "uint",
+          "offset": 0
+        },
+        {
+          "name": "Field2_1",
+          "type": "uint",
+          "offset": 4
+        },
+        {
+          "name": "ProductionFamily",
+          "type": "uint",
+          "offset": 8
+        },
+        {
+          "name": "NextProductionFamily",
+          "type": "uint",
+          "offset": 12
+        },
+        {
+          "name": "FamilyId",
+          "type": "uint",
+          "offset": 16
+        },
+        {
+          "name": "TextStraDllId",
+          "type": "ushort",
+          "offset": 20
+        },
+        {
+          "name": "Field7_2",
+          "type": "ushort",
+          "offset": 22
+        },
+        {
+          "name": "IsAlliance",
+          "type": "uint",
+          "offset": 24
+        },
+        {
+          "name": "IsEmpire",
+          "type": "uint",
+          "offset": 28
+        },
+        {
+          "name": "RefinedMaterialCost",
+          "type": "uint",
+          "offset": 32
+        },
+        {
+          "name": "MaintenanceCost",
+          "type": "uint",
+          "offset": 36
+        },
+        {
+          "name": "ResearchOrder",
+          "type": "uint",
+          "offset": 40
+        },
+        {
+          "name": "ResearchDifficulty",
+          "type": "uint",
+          "offset": 44
+        },
+        {
+          "name": "BombardmentDefense",
+          "type": "uint",
+          "offset": 48
+        },
+        {
+          "name": "ProcessingRate",
+          "type": "uint",
+          "offset": 52
+        }
+      ]
+    },
+    "TROOPSD": {
+      "header_size": 16,
+      "record_size": 68,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "uint",
+          "offset": 0
+        },
+        {
+          "name": "Field2_1",
+          "type": "uint",
+          "offset": 4
+        },
+        {
+          "name": "ProductionFamily",
+          "type": "uint",
+          "offset": 8
+        },
+        {
+          "name": "NextProductionFamily",
+          "type": "uint",
+          "offset": 12
+        },
+        {
+          "name": "FamilyId",
+          "type": "uint",
+          "offset": 16
+        },
+        {
+          "name": "TextStraDllId",
+          "type": "ushort",
+          "offset": 20
+        },
+        {
+          "name": "Field7_2",
+          "type": "ushort",
+          "offset": 22
+        },
+        {
+          "name": "IsAlliance",
+          "type": "uint",
+          "offset": 24
+        },
+        {
+          "name": "IsEmpire",
+          "type": "uint",
+          "offset": 28
+        },
+        {
+          "name": "RefinedMaterialCost",
+          "type": "uint",
+          "offset": 32
+        },
+        {
+          "name": "MaintenanceCost",
+          "type": "uint",
+          "offset": 36
+        },
+        {
+          "name": "ResearchOrder",
+          "type": "uint",
+          "offset": 40
+        },
+        {
+          "name": "ResearchDifficulty",
+          "type": "uint",
+          "offset": 44
+        },
+        {
+          "name": "UprisingDefense",
+          "type": "uint",
+          "offset": 48
+        },
+        {
+          "name": "Detection",
+          "type": "uint",
+          "offset": 52
+        },
+        {
+          "name": "BombardmentDefense",
+          "type": "uint",
+          "offset": 56
+        },
+        {
+          "name": "AttackStrength",
+          "type": "uint",
+          "offset": 60
+        },
+        {
+          "name": "DefenseStrength",
+          "type": "uint",
+          "offset": 64
+        }
+      ]
+    }
+  }
+}
