@@ -1,8 +1,28 @@
-# Mission planner v0.2
+# Mission tools v0.3
 
-The companion answers two questions: which of your current characters has the right skills, and what is that character's conditional mission-resolution roll? It is a planning aid, not a change to the original mission rules.
+The embedded panel shows current skills and conditional mission-resolution rolls inside Create Mission. The separate companion helps compare the full roster. Both explain the original mission rules without changing them.
 
-## Use
+## Embedded panel
+
+1. Start the supported Rebellion executable and load a campaign.
+2. Run `python mission_inline.py` or double-click `Launch-Ingame-Mission-Panel.cmd`.
+3. Open Create Mission in the game. The helper reads the actual selected mission and both member lists; no duplicate team selection is needed.
+4. Use **< / >** to cycle members. Each member is explicitly labeled agent or decoy. Mouse-wheel paging is also handled when Windows delivers wheel events to the panel.
+5. Close the helper using its small **x**, `Stop-Ingame-Mission-Panel.cmd`, or `python mission_inline.py --stop`.
+
+The Mission tab's illustration becomes the skills panel; the mission selector, target, and order buttons remain available. On Agents/Decoys, lists with at most two members each are temporarily shortened to make room below. Larger teams retain the full original assignment lists and can inspect their members on the Mission tab. The game remains authoritative for mission eligibility and orders.
+
+Refresh is approximately every 0.8 seconds, so tab, mission, and role changes may take a moment to appear. Invalid or changing readings remove the panel until a valid setup is available. Closing Create Mission removes its child panel; reopening it attaches a new one. Only one helper instance is allowed. It exits when the game closes; start it again for a new game process.
+
+Support and usable Imperial Stormtrooper regiment counts are read only from **your own systems in your faction's view**. Enemy/neutral-system context and target-character Combat are left unknown. Neither unknown support nor unknown defenders is assumed to be zero. Missions requiring missing inputs show no percentage. Special forces are retained in the member selector but have no skill/odds reading. Jedi training and reconnaissance are unsupported. The helper never starts a mission or changes a member's role.
+
+This is a Windows child window parented to the game's real mission dialog, owned by the Python helper process. It is not a second planner window or a persistent executable patch. It uses normal Windows window-position operations for its panel and compact lists, with parent, class, control-ID, and process checks. Normal shutdown restores list dimensions. Forced termination cannot run cleanup: close and reopen Create Mission if the lists remain shortened. No game files, save data, process memory, DLL injection, or window-procedure hooks are involved.
+
+It has been visually tested in the original 640 × 480 fullscreen game on Windows. Unlike the separate companion, it does not require space on another monitor. Other renderers, DPI configurations, executable builds, and long campaigns need further validation.
+
+The helper observes left-button state to support the fullscreen game's captured mouse input. It acts only on a fresh press over its own visible panel while the game is the foreground window, and ignores covered panels, other apps, and drags that began elsewhere. It does not suppress or inject input or install a global mouse hook.
+
+## Separate companion
 
 1. Start the supported Rebellion executable and load a campaign.
 2. Run `python mission_planner.py` or double-click `Launch-Mission-Planner.cmd`.
@@ -46,7 +66,7 @@ All table values are loaded from the user's local installation. No vanilla proba
 | Incite uprising | Leadership − own support − Stormtrooper regiments | INCTMSTB |
 | Subdue uprising | Leadership − own support + Stormtrooper regiments | SUBDMSTB |
 
-Research displays the relevant current capability, with no percentage. Decoys display current Espionage, with no percentage. No total mission, detection, capture, escape, travel-time, or aggregate-team probability is implemented. Target fields are manual assumptions, not a readout of hidden game state. Final mission effects and ordering can matter even after a successful agent roll.
+Research displays the relevant current capability, with no percentage. Decoys display current Espionage, with no percentage. No total mission, detection, capture, escape, travel-time, or aggregate-team probability is implemented. The companion's target fields are manual assumptions; the embedded panel reads only the known own-system context described above. Final mission effects and ordering can matter even after a successful agent roll.
 
 ## Live compatibility
 
@@ -72,9 +92,12 @@ Relevant primary notes and routines:
 - [Decoy roll and phase-10 resolution](https://github.com/tdimino/open-rebellion/blob/e8ae0457e7fac9276e2212e9c9c9521a32603744/ghidra/notes/decoy-roll.md): per-agent mission rolls and separate decoy lists; `FUN_00592f50` and mission wrappers.
 - [Probability tables](https://github.com/tdimino/open-rebellion/blob/e8ae0457e7fac9276e2212e9c9c9521a32603744/ghidra/notes/uprising-incident.md): score formulas, support/Stormtrooper meanings, and step lookup `FUN_00595090`.
 - [Side numbering](https://github.com/tdimino/open-rebellion/blob/e8ae0457e7fac9276e2212e9c9c9521a32603744/ghidra/notes/side-numbering.md), [object flags](https://github.com/tdimino/open-rebellion/blob/e8ae0457e7fac9276e2212e9c9c9521a32603744/ghidra/notes/object-state-flags.md), and [character roster](https://github.com/tdimino/open-rebellion/blob/e8ae0457e7fac9276e2212e9c9c9521a32603744/ghidra/notes/character-roster.md): view/ownership filtering, existence, classes, and recruitment eligibility.
+- [Mission dialog](https://github.com/tdimino/open-rebellion/blob/e8ae0457e7fac9276e2212e9c9c9521a32603744/ghidra/notes/mission-dialog.md): native pages, controls, selected mission, and agent/decoy lists (`FUN_0046a750`, `FUN_0046a9c0`, `FUN_0046c3c0`). Own support and Stormtrooper counts use the meanings verified in `FUN_00507270` and `FUN_005091f0`. Native list traversal was checked against `FUN_005f5060`.
+
+The embedded reader validates dialog/order vtables and side identity, limits intrusive-list traversal, rejects duplicate members, and rereads the selection after collecting context and skills. Cached candidates must still name a live game-owned mission HWND, so freed dialog memory cannot hide a newly opened setup. These checks reduce stale readings but do not make a running campaign atomic.
 
 Local checks compared the four effective skills with the original game's Status screen and identified eight recruited Empire characters in a fresh campaign. Tests exercise synthetic memory records and tables, including unknown target values and threshold boundaries. These checks validate the displayed inputs and implemented conditional calculations; they are **not** a statistical measurement of complete mission outcomes. See [the validation record](VALIDATION.md).
 
 ## Further work
 
-Read the active mission dialog's team, decoys, mission, and known target context automatically; support special forces; validate the defender/decoy/capture sequence; then consider a native UI extension. Those features are not part of v0.2.
+Support special forces and more known-target inputs, validate the defender/decoy/capture sequence, and test larger campaigns and additional display configurations. Complete mission-outcome odds remain unimplemented.

@@ -2,13 +2,31 @@
 
 [![Tests](https://github.com/trafaelosborn/rebellion-overhaul/actions/workflows/tests.yml/badge.svg)](https://github.com/trafaelosborn/rebellion-overhaul/actions/workflows/tests.yml)
 
-A live mission-planning companion, reproducible modding toolkit, and experimental fleet-balance preset for **Star Wars Rebellion (1998)**.
+Live skills and conditional odds inside the mission setup screen, a mission-planning companion, and an experimental fleet-balance toolkit for **Star Wars Rebellion (1998)**.
 
 Inspect the original data, preview every change, apply a checksum-verified patch, and restore the exact original files. Python 3.11+; no third-party Python dependencies.
 
 **Status: prototype.** The fleet preset launches in the supported game, and live character readings have been compared with its Status screen. Automated tests cover the patcher and mission calculations. Campaign balance, AI behavior, tactical combat, and save compatibility remain unverified.
 
-## Mission planner
+## In-game mission panel
+
+Start Rebellion and load a campaign, then double-click **`Launch-Ingame-Mission-Panel.cmd`** (Windows, 64-bit Python 3.11+). Or run:
+
+```powershell
+python mission_inline.py
+```
+
+Open **Create Mission** normally. The panel appears inside that window and follows the actual mission, agents, and decoys. It shows current relevant skills and the installed table's conditional resolution-roll percentage. Click **< / >** to inspect each member. Own-system support and Stormtrooper counts are read automatically; unavailable target information remains unknown.
+
+On the Mission tab, it replaces the mission illustration while keeping the mission selector and target visible. On Agents/Decoys it fits below compact lists (up to two members per column). Larger assignment lists retain their original layout; use the Mission tab to inspect their members. The display refreshes approximately every 0.8 seconds.
+
+Click the panel's small **x**, run **`Stop-Ingame-Mission-Panel.cmd`**, or run `python mission_inline.py --stop` to remove it. Launch it again for the next game session. The helper creates a temporary Windows child control and temporarily shortens compact assignment lists; it does not patch the executable or write game memory/files/saves. Normal shutdown restores list sizes. If the helper is forcibly terminated, close and reopen Create Mission to restore the layout.
+
+**The percentage is the individual agent's resolution roll, not overall mission success.** Interception, capture, travel, decoys, and final effects require additional rules. Special forces, Jedi training, and reconnaissance do not yet have readings; research shows capabilities without percentages. The panel supports one checksum-pinned English executable, tested in the original 640 × 480 fullscreen game. It is an experimental helper that must stay running, not a permanent game patch.
+
+See [mission rules, compatibility, and evidence](docs/MISSION-PLANNER.md). The fleet preset is optional.
+
+## Separate mission planner
 
 Start Rebellion and load a campaign, then double-click **`Launch-Mission-Planner.cmd`** (Windows, 64-bit Python 3.11+ with Tkinter). Or run:
 
@@ -18,7 +36,7 @@ python mission_planner.py
 
 The companion detects the running installation and your faction, reads current effective skills, and refreshes the roster. Choose a mission to rank characters by its relevant skill, then assign proposed agents and decoys. It reads your installed probability tables to show each agent's conditional resolution-roll chance. Unknown target information stays unknown; enter support or target Combat only when you know it.
 
-**This is a separate planner window.** Choose the mission and proposed team in the companion; it does not follow or modify the game's mission dialog. Issue orders in Rebellion. The percentage is **not overall mission success**: detection, capture, travel, decoys, and final outcomes require additional rules. Research capabilities are shown without invented percentages.
+This companion remains available for browsing and comparing the full roster and entering known target assumptions manually. Its proposed team is independent of the game's mission dialog. Issue orders in Rebellion.
 
 Live mode supports one checksum-pinned original English executable. It requests read-only process access and does not modify memory, game files, or saves. No administrator rights should be necessary when both applications run as the same user. The window needs at least 980 × 680 of usable display space; it prefers a larger monitor when fullscreen Rebellion changes the primary screen to 640 × 480. On a single monitor, use a windowed game configuration with enough desktop space.
 
@@ -29,7 +47,8 @@ See [mission rules, compatibility, and evidence](docs/MISSION-PLANNER.md). The f
 - A reader for seven tables: capital ships, fighters, major/minor characters, troops, manufacturing facilities, and production facilities.
 - A JSON preset with 20 edits across 15 ship/fighter types. Each edit records its original value, replacement, and design reason.
 - Read-only previews; whole-file SHA-256 checks before patching; backups; checked restoration.
-- A Windows mission planner with live player skills, proposed team/decoy roles, and table-based per-agent roll odds for ten mission types.
+- A native mission-setup panel that follows the game's selected mission, team, and roles, plus a separate roster planner.
+- Live player skills and table-based per-agent roll calculations for ten mission types, with unknown inputs kept explicit.
 - Synthetic test fixtures and Windows/Linux CI. Tests do not need the game.
 
 This repository contains tools and modification instructions. **No game executables, DLLs, original data tables, artwork, audio, or saves are included.** You supply your own installed copy.

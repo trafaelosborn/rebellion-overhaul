@@ -27,7 +27,20 @@ Original game files and the local integration fixture are not included in this r
 - Opened and visually checked the companion, live refresh, character selection, and agent assignment. It moves onto a sufficiently large available monitor when fullscreen Rebellion reduces the primary display resolution.
 - No process writes, save changes, or game-table edits are performed by the planner.
 
-The companion is a separate UI. Native mission-dialog synchronization, special forces, and overall mission-success/detection/capture odds remain future work. Conditional-roll formulas are grounded in the cited reverse engineering, not calibrated by repeated complete missions.
+The companion is a separate UI. Conditional-roll formulas are grounded in the cited reverse engineering, not calibrated by repeated complete missions.
+
+## Embedded mission panel — 2026-11-01
+
+- 49 synthetic tests passed locally on Windows/Python 3.14, including native-list traversal, changing selections, stale dialog handles, campaign changes, role changes, own-system visibility, and pointer focus/occlusion guards.
+- Created a native Windows child control inside the original Create Mission dialog and visually verified it in 640 × 480 fullscreen play. The Mission tab retains its mission selector and target; the Agents/Decoys tab displays the panel below compact assignment lists.
+- Read the actual selected Recruitment mission, its agent, Coruscant's own-faction support, and six usable Stormtrooper regiments from the fresh Empire test campaign.
+- Displayed the Emperor's current Leadership 150, score 50, and the installed table's 45% conditional recruitment roll. Moving him to Decoys changed the panel to Espionage 50 and no mission-success percentage; moving him back restored the agent reading. No mission was submitted for this check.
+- Checked switching between both native tabs and opening/closing the native mission selector while the panel was present.
+- Checked stop/restart and the panel's close button. Normal shutdown removed the child control and restored the full original assignment lists.
+- Member paging has synthetic coverage; larger live teams, their layout fallback, and wheel-input delivery still need playtesting.
+- The integration requests read-only process access. Its only game-window changes are temporary child controls and compact-list dimensions; it does not patch game binaries, memory, tables, or saves.
+
+Special forces, Jedi training, reconnaissance, and overall mission-success/detection/capture odds remain unsupported. Enemy and neutral target context stays unknown. These tests do not validate long-running play, every display configuration, or every mission's complete outcome.
 
 ## Not yet verified
 

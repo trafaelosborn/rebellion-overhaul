@@ -22,6 +22,8 @@ The [SW:Rebellion community](https://swrebellion.net/) and the original [RebED](
 
 [Tom di Mino's Open Rebellion](https://github.com/tdimino/open-rebellion), revision [`e8ae0457e7fac9276e2212e9c9c9521a32603744`](https://github.com/tdimino/open-rebellion/tree/e8ae0457e7fac9276e2212e9c9c9521a32603744/ghidra/notes), documents the original executable's runtime character fields, ownership/views, mission phases, and probability-table lookup. The mission planner's implementation uses those documented facts and local read-only checks of the matching executable. Specific sources and validation limits are listed in [MISSION-PLANNER.md](docs/MISSION-PLANNER.md). No upstream implementation or decompiler listing is bundled.
 
+The embedded panel also uses that project's mission-dialog control layout, member-list traversal, and system-context research. Its Windows child-control implementation is original Python/ctypes code using Microsoft's [CreateWindowExW](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-createwindowexw) and [SetWindowPos](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos) APIs. No original artwork is distributed with the panel.
+
 ## Game content
 
 Star Wars Rebellion and its original assets belong to their respective rights holders. They are not supplied by this project. Local extraction is for inspecting the user's own installation; do not commit or redistribute extracted content in this repository.
