@@ -2,17 +2,34 @@
 
 [![Tests](https://github.com/trafaelosborn/rebellion-overhaul/actions/workflows/tests.yml/badge.svg)](https://github.com/trafaelosborn/rebellion-overhaul/actions/workflows/tests.yml)
 
-A reproducible modding toolkit and experimental fleet-balance preset for **Star Wars Rebellion (1998)**.
+A live mission-planning companion, reproducible modding toolkit, and experimental fleet-balance preset for **Star Wars Rebellion (1998)**.
 
 Inspect the original data, preview every change, apply a checksum-verified patch, and restore the exact original files. Python 3.11+; no third-party Python dependencies.
 
-**Status: prototype.** The tooling has automated safety tests. The first preset has been applied to local copies of supported game tables, read back, and restored byte for byte. It has **not** been playtested in the game: campaign balance, AI behavior, tactical combat, and save compatibility remain unverified. This is a starting point for experiments, not a finished overhaul.
+**Status: prototype.** The fleet preset launches in the supported game, and live character readings have been compared with its Status screen. Automated tests cover the patcher and mission calculations. Campaign balance, AI behavior, tactical combat, and save compatibility remain unverified.
+
+## Mission planner
+
+Start Rebellion and load a campaign, then double-click **`Launch-Mission-Planner.cmd`** (Windows, 64-bit Python 3.11+ with Tkinter). Or run:
+
+```powershell
+python mission_planner.py
+```
+
+The companion detects the running installation and your faction, reads current effective skills, and refreshes the roster. Choose a mission to rank characters by its relevant skill, then assign proposed agents and decoys. It reads your installed probability tables to show each agent's conditional resolution-roll chance. Unknown target information stays unknown; enter support or target Combat only when you know it.
+
+**This is a separate planner window.** Choose the mission and proposed team in the companion; it does not follow or modify the game's mission dialog. Issue orders in Rebellion. The percentage is **not overall mission success**: detection, capture, travel, decoys, and final outcomes require additional rules. Research capabilities are shown without invented percentages.
+
+Live mode supports one checksum-pinned original English executable. It requests read-only process access and does not modify memory, game files, or saves. No administrator rights should be necessary when both applications run as the same user. The window needs at least 980 × 680 of usable display space; it prefers a larger monitor when fullscreen Rebellion changes the primary screen to 640 × 480. On a single monitor, use a windowed game configuration with enough desktop space.
+
+See [mission rules, compatibility, and evidence](docs/MISSION-PLANNER.md). The fleet preset is optional; the planner also works with the supported original executable and unmodified ship tables.
 
 ## What is here
 
 - A reader for seven tables: capital ships, fighters, major/minor characters, troops, manufacturing facilities, and production facilities.
 - A JSON preset with 20 edits across 15 ship/fighter types. Each edit records its original value, replacement, and design reason.
 - Read-only previews; whole-file SHA-256 checks before patching; backups; checked restoration.
+- A Windows mission planner with live player skills, proposed team/decoy roles, and table-based per-agent roll odds for ten mission types.
 - Synthetic test fixtures and Windows/Linux CI. Tests do not need the game.
 
 This repository contains tools and modification instructions. **No game executables, DLLs, original data tables, artwork, audio, or saves are included.** You supply your own installed copy.
@@ -41,7 +58,7 @@ The included preset is validated against the two specific original English Steam
 | `CAPSHPSD.DAT` | `36fdaaeef4057d70e10a1593950cee5b197ce38d7d1b6a06201a74c93bf44515` |
 | `FIGHTSD.DAT` | `b62598d9a35fa3fe9fb65622f2720d10e6fabba055ccba41b87bdf07895268a5` |
 
-The reader and patcher are portable Python. Optional name extraction from `TEXTSTRA.DLL` requires Windows. Cross-platform CI verifies synthetic files; it does not demonstrate game compatibility on those operating systems.
+The data reader, patcher, and mission calculation logic are portable Python. Live process reading and name extraction from `TEXTSTRA.DLL` require Windows. Cross-platform CI verifies synthetic inputs; it does not demonstrate game compatibility on those operating systems.
 
 ## Try it
 
@@ -82,7 +99,7 @@ The patcher validates the complete file set and every expected value before chan
 
 Two files cannot be replaced as one filesystem transaction. A power loss, forced process termination, or failed rollback can leave a mixed state. The retained backup can restore a mixture of intact originals and expected patched files. If a file is damaged or changed to another value, restoration deliberately refuses; preserve the backup and investigate. Keep the game closed throughout the operation to avoid concurrent writes. The tool does not lock the entire installation or detect every running editor.
 
-Engine behavior and multiplayer/save compatibility are untested. There are no new units, factions, graphics, missions, or AI routines in this prototype. Do not use it for a campaign you want to preserve before completing the [playtest checklist](docs/PLAYTESTING.md).
+Engine behavior and multiplayer/save compatibility are untested. There are no new units, factions, graphics, mission rules, or AI routines in this prototype. The mission planner explains existing rules and skills. Before applying balance changes to a campaign you want to preserve, complete the [playtest checklist](docs/PLAYTESTING.md).
 
 ## Development
 
@@ -90,7 +107,7 @@ Engine behavior and multiplayer/save compatibility are untested. There are no ne
 python -m unittest discover -s tests -v
 ```
 
-The tests cover exact restoration, checksum mismatches, interrupted multi-file writes, corrupt backups, edits made after patching, path traversal, duplicate/invalid edits, and malformed binary input. All fixtures are generated from synthetic values. See [validation notes](docs/VALIDATION.md).
+The tests cover patch safety, exact restoration, malformed binary input, mission formulas, step-table boundaries, missing target information, character visibility, and current-skill decoding. All fixtures use synthetic values. See [validation notes](docs/VALIDATION.md).
 
 Presets are JSON. The writer currently permits only cost, hull, shield, and capacity fields. IDs, family markers, unknown fields, and other structural data cannot be changed. Use `--preset path/to/preset.json` with `plan` or `apply` for your own preset; restoration uses the saved manifest.
 

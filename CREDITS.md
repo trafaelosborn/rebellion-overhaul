@@ -18,6 +18,10 @@ The source editor's `DatFile.cs` supplies context for binary field serialization
 
 The [SW:Rebellion community](https://swrebellion.net/) and the original [RebED](https://swrebellion.net/rebed/) tooling kept this game's modding ecosystem alive.
 
+## Mission and runtime research
+
+[Tom di Mino's Open Rebellion](https://github.com/tdimino/open-rebellion), revision [`e8ae0457e7fac9276e2212e9c9c9521a32603744`](https://github.com/tdimino/open-rebellion/tree/e8ae0457e7fac9276e2212e9c9c9521a32603744/ghidra/notes), documents the original executable's runtime character fields, ownership/views, mission phases, and probability-table lookup. The mission planner's implementation uses those documented facts and local read-only checks of the matching executable. Specific sources and validation limits are listed in [MISSION-PLANNER.md](docs/MISSION-PLANNER.md). No upstream implementation or decompiler listing is bundled.
+
 ## Game content
 
 Star Wars Rebellion and its original assets belong to their respective rights holders. They are not supplied by this project. Local extraction is for inspecting the user's own installation; do not commit or redistribute extracted content in this repository.
